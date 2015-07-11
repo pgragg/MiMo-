@@ -1,0 +1,2 @@
+class MasterListsController < ApplicationController
+end

@@ -1,0 +1,10 @@
+<h1>Welcome! Create or join a group to get started. </h1> 
+
+<div class = "text-center"> 
+  <div class = "col-md-12 col-sm-12 col-lg-12">
+    <%=link_to "Create a Group", new_group_path(current_user), class: "btn btn-success" %>
+  </div>
+  <div class = "col-md-12 col-sm-12 col-lg-12">
+    <%=link_to "Find a Group", group_path(current_user), class: "btn btn-success" %>
+  </div>
+</div>  

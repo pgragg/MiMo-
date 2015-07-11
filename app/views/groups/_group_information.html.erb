@@ -1,0 +1,18 @@
+<table class = "table">
+  <tr class=""> 
+    <h1 class="text-center"> <%=@group.name%> Information </h1> 
+  </tr>
+  <tr> 
+    <td><h3>Address</h3></td> 
+    <td><h3>Move in Date</h3></td> 
+    <td><h3>Group Budget</h3></td> 
+    <td><h3>Zip Code </h3> </td> 
+  </tr> 
+    <tr> 
+    <td> <%=@group.address%></td> 
+    <td> <%=@group.move_date %> </td> 
+    <td> $<%=@group.budget %> </td> 
+    <td> <%=@group.zip_code %> </td> 
+    <td> <%= link_to "Delete Group", group_path(@group), method: :delete, class:"btn btn-danger"%></td>
+    </tr> 
+</table>

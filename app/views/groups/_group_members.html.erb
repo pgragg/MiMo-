@@ -1,0 +1,20 @@
+<table class = "table">
+  <tr class=""> 
+    <h1 class="text-center"> <%=@group.name%> Members </h1> 
+  </tr>
+  <tr> 
+    <td><h3>Name</h3></td> 
+    <td><h3>Budget</h3></td> 
+    <td><h3>Email</h3></td> 
+  </tr> 
+  <% @group_members.each do |member| %> 
+    <tr> 
+    <td> <%="#{member.first_name} #{member.last_name}"%></td> 
+    <td> $<%=member.budget %> </td> 
+    <td> <%=member.email %> </td> 
+    <% if member != current_user %> 
+    <td> <%= link_to "Remove", user_path(member), method: :delete, class:"btn btn-danger"%></td>
+    <% end %>
+    </tr> 
+  <% end %>
+</table>

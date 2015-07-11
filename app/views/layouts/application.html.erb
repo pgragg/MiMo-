@@ -2,13 +2,44 @@
 <html>
 <head>
   <title>MiMo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="shortcut icon" href="https://www.dwight.edu/favicon.ico" /> 
 </head>
 <body>
+  <% if flash[:notice] %>
+   <div class="alert alert-success">
+     <button type="button" class="close" data-dismiss="alert">&times;</button>
+     <%= flash[:notice] %>
+   </div>
+  <% elsif flash[:error] %>
+   <div class="alert alert-danger">
+     <button type="button" class="close" data-dismiss="alert">&times;</button>
+     <%= flash[:error] %>
+   </div>
+  <% elsif flash[:alert] %>
+   <div class="alert alert-warning">
+     <button type="button" class="close" data-dismiss="alert">&times;</button>
+     <%= flash[:alert] %>
+   </div>
 
-<%= yield %>
-
+  <% end %>
+    <div class = "filter"> 
+    <% if current_user %> 
+    <ul class="nav nav-tabs text-center"> 
+        <% if groups? %> 
+          <li class= "col-md-4"> <%= link_to "Group", groups_path %> </li> 
+        <%end %> 
+        
+        <li class= "col-md-4"><%= link_to (current_user.first_name || current_user.email), edit_user_registration_path %></li> 
+        <li class= "col-md-4"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+        <%end%>
+    </ul>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </div> 
 </body>
 </html>

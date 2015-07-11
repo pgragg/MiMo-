@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  post '/join_group' => 'groups#join', as: :join
+  get '/join_group/(.:format)' => 'groups#join', as: :find_group
+  devise_for :users, controllers: {sessions: 'users/sessions'}
+  resources :welcome 
+  resources :list_subcategories
+  resources :list_categories
+  resources :master_lists
+  resources :items
+  resources :groups do 
+  end
+  resources :requests
+  resources :users
+  devise_scope :user do
+    #root "devise/registrations#new"
+    root "welcome#index"
+  end
+
+ 
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
