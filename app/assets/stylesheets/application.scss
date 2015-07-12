@@ -318,8 +318,9 @@ a.over-image.left {
 }
 
 a.over-image.right {
-  right: 25%;
-
+  /* right: 29%; */
+  margin: 0 auto 0 5%;
+  display: block;
 }
 
 a p {
