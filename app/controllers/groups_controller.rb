@@ -11,6 +11,7 @@ class GroupsController < ApplicationController
   def create 
     @group = current_user.groups.create(group_params)
     @group.users << current_user
+    @group.email = current_user.email 
     @group.save! 
     if @group.save
      flash[:notice] = "You have created a group. You are a trailblazer."
@@ -28,8 +29,26 @@ class GroupsController < ApplicationController
   end 
 
   def join 
-    @group = Group.all.where("name = ?", "#{params[:search][:name]}").where("zip_code = ?", "#{params[:search][:zip_code]}")
-    @group.users << current_user 
+    # @group = Group.all.search("email", params[:group_email],"zip_code", params[:zip_code])
+    @group = Group.all.where("email = ?", "#{params[:group_email]}").where("zip_code = ?", "#{params[:zip_code]}")
+
+    if @group.first
+
+      current_user.group_id = @group.first.id 
+      redirect_to :back
+      flash[:notice] = "You have joined a group. You are a team player."
+    else 
+      redirect_to :back 
+      flash[:error] = "Returns #{@group.count} groups associated with #{params[:group_email]} and #{params[:zip_code]}"
+    end
+
+  end 
+
+  def find 
+    
+  end 
+
+  def show 
   end 
 
   private 

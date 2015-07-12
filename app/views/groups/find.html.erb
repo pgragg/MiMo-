@@ -1,0 +1,25 @@
+<h1 class="text-center title_row"> Find Your Roommates! </h1> 
+<div class = "text-center">
+  <p> If your group exists, you'll be able to find them using the exact email address of a group member and the zip code of the apartment where you'll be moving.</p>  
+</div>
+
+<%= form_tag join_group_path, :method => 'get', :id => "groups_search" do %>
+  <div class = "row title_row">
+    <div class = "col-md-6"> 
+      <p> Email Address of Group Creator</p> 
+      <%= text_field_tag :group_email, params[:group_email], placeholder: "eg. \"email@example.com\"", class: 'form-control' %>
+    </div>
+      <div class = "col-md-6"> 
+        <p> Zip Code to Which You're Moving</p> 
+      <%= text_field_tag :zip_code, params[:zip_code], placeholder: "eg. \"10021\"", class: 'form-control' %>
+    </div>
+  </div>
+  <div class = "row text-center title_row"> 
+    <div class = "col-md-12"> 
+      <%= submit_tag "Search", :zip_code => nil, class: "btn btn-success"%>
+    </div>
+  </div>
+  <% if @groups %> 
+    <div id="groups" class = "title_row"><%= render partial: 'group_results'%></div>
+  <% end %> 
+<% end %>

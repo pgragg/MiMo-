@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  post '/join_group' => 'groups#join', as: :join
-  get '/join_group/(.:format)' => 'groups#join', as: :find_group
+  get '/join_group' => 'groups#join', as: :join_group
+  get '/find_group' => 'groups#find', as: :find_group
   devise_for :users, controllers: {sessions: 'users/sessions'}
   resources :welcome 
   resources :list_subcategories
