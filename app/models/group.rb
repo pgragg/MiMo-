@@ -7,7 +7,9 @@ class Group < ActiveRecord::Base
   def budget
     budget = 0 
     self.users.each do |user| 
-      budget += user.budget
+      unless user.budget == nil 
+       budget += user.budget
+      end 
     end 
     budget 
   end 
