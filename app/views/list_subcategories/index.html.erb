@@ -4,10 +4,9 @@
     <th><h2> Link to Buy </h2></th> 
   </tr>
   <% @list_subcategories.each do |subcat| %>
-   
   <tr>  
       <td> <%= subcat.name %> <%= link_to "---", i_have_this_path(subcat), class: "checkbox" %> </td> 
-      <td><%= link_to "#{subcat.name}", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"%></td> 
+      <td><%= ListSubcategory.search_for(subcat.name)[0]%></td> 
   </tr> 
   <% end %> 
 </table> 

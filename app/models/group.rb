@@ -1,21 +1,20 @@
 class Group < ActiveRecord::Base
+  
   has_many :users  
   has_one :master_list 
   
 
-  def budget 
+  def budget
     budget = 0 
     self.users.each do |user| 
-      if user.budget != nil 
-        budget += user.budget
-      end 
+      budget += user.budget
     end 
     budget 
   end 
 
-  def users 
-    User.where("group_id = ?", self.id)
-  end 
+  # def users 
+  #   User.where("group_id = ?", self.id)
+  # end 
 
   def self.search(prop1, search1, prop2, search2)
     if search1 != '' && search2 != ''

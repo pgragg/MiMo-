@@ -4,10 +4,10 @@ class MasterList < ActiveRecord::Base
 
 
   CATEGORIES = { 
-    "Entrance Area" => %w[Welcome_Mat Small_Area_Rug Wall_Hooks Small_Table Lamp], 
-    "Living Room" => %w[Couch Chairs Coffee_table Bookshelves Television TV_stand Throw_Pillows artwork lamps], 
+    "Entrance Area" => ['Welcome Mat', 'Small Area Rug', 'Wall Hooks', 'Table Lamp'], 
+    "Living Room" => %w[Couch Chairs Table Bookshelf Television Stand Pillows Art Lamp], 
     "Kitchen" => %w[Silverware Plates Glasses Mugs Bowls Trash_Can Pots Pans Oven_mitts], 
-    "Bathroom" => %w[Shower_Curtain Shower_Caddy Toothbrush Toiletries Toilet_Paper Plunger Tissues Trash_can Towel_hook] 
+    "Bathroom" => ['shower curtain', 'shower caddy', "Toothbrush", "Toiletries", "Toilet Paper", "Plunger", "Tissues", "Trash"] 
   }
 
 

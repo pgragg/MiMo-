@@ -37,9 +37,9 @@ class GroupsController < ApplicationController
     # @group = Group.all.search("email", params[:group_email],"zip_code", params[:zip_code])
     @group = Group.all.where("email = ?", "#{params[:group_email]}").where("zip_code = ?", "#{params[:zip_code]}")
 
-    if @group.first
-      @group.first.users << current_user
-      current_user.groups << @group.first
+    if @group[0]
+      @group[0].users << current_user
+      current_user.groups << @group[0]
       current_user.save! 
       @group.first.save!
       redirect_to :back
@@ -50,6 +50,7 @@ class GroupsController < ApplicationController
     end
 
   end 
+
 
   def find 
     
