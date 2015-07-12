@@ -1,6 +1,6 @@
 <h1 class="text-center title_row"> Find Your Roommates! </h1> 
 <div class = "text-center">
-  <p> If your group exists, you'll be able to find them using the exact email address of a group member and the zip code of the apartment where you'll be moving.</p>  
+  <p> Did one of your roommates already create an apartment on this site? </p> <br> <p> If your group exists, you'll be able to find them using the exact email address of a group member and the zip code of the apartment where you'll be moving.</p>  <br>
 </div>
 
 <%= form_tag join_group_path, :method => 'get', :id => "groups_search" do %>
@@ -16,7 +16,7 @@
   </div>
   <div class = "row text-center title_row"> 
     <div class = "col-md-12"> 
-      <%= submit_tag "Search", :zip_code => nil, class: "btn btn-success"%>
+      <%= submit_tag "Join Group", :zip_code => nil, class: "btn btn-success"%>
     </div>
   </div>
   <% if @groups %> 

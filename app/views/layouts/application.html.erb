@@ -6,7 +6,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <link rel="shortcut icon" href="https://www.dwight.edu/favicon.ico" /> 
+  <link rel="shortcut icon" href="http://i.imgur.com/QC20bUH.png" /> 
 </head>
 <body>
   <% if flash[:notice] %>
@@ -30,7 +30,7 @@
     <% if current_user %> 
     <ul class="nav nav-tabs text-center"> 
         <% if groups? %> 
-          <li class= "col-md-4"> <%= link_to "Group", groups_path %> </li> 
+          <li class= "col-md-4"> <%= link_to "#{group.name}", groups_path %> </li> 
         <%end %> 
         
         <li class= "col-md-4"><%= link_to (current_user.first_name || current_user.email), edit_user_registration_path %></li> 

@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   get '/join_group' => 'groups#join', as: :join_group
   get '/find_group' => 'groups#find', as: :find_group
+  get 'master_lists/new' => 'master_lists#create', as: :new_list
   devise_for :users, controllers: {sessions: 'users/sessions'}
   resources :welcome 
   resources :list_subcategories
   resources :list_categories
-  resources :master_lists
   resources :items
   resources :groups do 
+    resources :master_lists
   end
   resources :requests
   resources :users

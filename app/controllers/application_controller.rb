@@ -5,13 +5,19 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   # before_filter :set_current_user
   before_action :authenticate_user!
-  helper_method :groups?
+  helper_method :groups?, :group 
 
   def groups?
     if current_user
       return current_user.groups.count >= 1 
     end
   end 
+
+  def group
+    current_user.groups.first
+  end 
+
+  
 
   private 
 

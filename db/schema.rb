@@ -11,38 +11,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150711232307) do
+ActiveRecord::Schema.define(version: 20150712031050) do
 
   create_table "groups", force: :cascade do |t|
     t.string   "name"
     t.date     "move_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "address"
     t.string   "zip_code"
     t.integer  "user_id"
     t.string   "email"
+    t.integer  "master_list_id"
   end
 
   create_table "items", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.integer  "list_subcategory_id"
   end
 
   create_table "list_categories", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "name"
+    t.integer  "master_list_id"
   end
 
   create_table "list_subcategories", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "name"
+    t.integer  "list_category_id"
   end
 
   create_table "master_lists", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name"
+    t.integer  "group_id"
   end
 
   create_table "requests", force: :cascade do |t|

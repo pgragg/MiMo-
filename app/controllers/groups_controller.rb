@@ -3,7 +3,10 @@ class GroupsController < ApplicationController
   before_action :authenticate_user!
   def index 
     @group = current_user.groups.first
-    @group_members = @group.users if @group
+    if @group
+      @master_list = @group.master_list
+      @group_members = @group.users 
+    end 
   end 
   def new 
     @group = Group.new 
@@ -33,10 +36,10 @@ class GroupsController < ApplicationController
     @group = Group.all.where("email = ?", "#{params[:group_email]}").where("zip_code = ?", "#{params[:zip_code]}")
 
     if @group.first
-
-      current_user.group_id = @group.first.id 
+      current_user.groups << @group.first
+      current_user.save! 
       redirect_to :back
-      flash[:notice] = "You have joined a group. You are a team player."
+      flash[:notice] = "You have joined #{@group.name}. You are a team player."
     else 
       redirect_to :back 
       flash[:error] = "Returns #{@group.count} groups associated with #{params[:group_email]} and #{params[:zip_code]}"

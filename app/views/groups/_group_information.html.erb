@@ -13,6 +13,12 @@
     <td> <%=@group.move_date %> </td> 
     <td> $<%=@group.budget %> </td> 
     <td> <%=@group.zip_code %> </td> 
+    <% if @group.master_list %> 
+      <td> <%= link_to "Go to the List!", group_master_list_path(@group, @group.master_list), class:"btn btn-success"%></td>
+    <% else %> 
+      <td> <%= link_to "Create Your Group's List!", new_list_path(@group), class:"btn btn-success"%></td>
+    <% end %> 
+    
     <td> <%= link_to "Delete Group", group_path(@group), method: :delete, class:"btn btn-danger"%></td>
     </tr> 
 </table>

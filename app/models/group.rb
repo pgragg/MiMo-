@@ -1,7 +1,7 @@
 class Group < ActiveRecord::Base
   has_many :users  
   has_many :items, through: :users 
-  has_one :list 
+  has_one :master_list 
   
 
   def budget 
