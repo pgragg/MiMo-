@@ -80,6 +80,11 @@ h1 {
   font-weight: 800;
 }
 
+h2.sign {
+  font-size: 25px;
+  margin: 0 0 19% 0;
+}
+
 ul {
   margin: 0 auto;
   width: 50%;
@@ -94,17 +99,18 @@ form {
   margin-bottom: 5.4%;
 }
 
-h1.hero-text, h2.hero-text{
+h1.hero-text, h3.hero-text{
   font-style: bold;
   color: white;
   font-weight: 800;
   position: relative;
-  margin: 6% 0 0 0;
   z-index:1;
+  line-height: 120%;
 }
 
 h1.hero-text {
   font-size: 664%;
+  margin: 6% 0 0 0;
 }
 
 .vl {
@@ -145,6 +151,7 @@ input {
   height: 50;
   margin: 0.1% 0 0 2%;
   position: absolute;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.29);
 }
 
 .hero_image.not-signed-in {

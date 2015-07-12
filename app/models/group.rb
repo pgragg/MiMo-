@@ -6,9 +6,15 @@ class Group < ActiveRecord::Base
   def budget 
     budget = 0 
     self.users.each do |user| 
-      budget += user.budget if user.budget 
+      if user.budget != nil 
+        budget += user.budget
+      end 
     end 
     budget 
+  end 
+
+  def users 
+    User.where("group_id = ?", self.id)
   end 
 
   def self.search(prop1, search1, prop2, search2)

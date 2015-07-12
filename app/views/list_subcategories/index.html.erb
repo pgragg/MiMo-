@@ -1,3 +1,13 @@
-<% @list_subcategories.each do |subcat| %> 
-    <p> <%= subcat.name %> <%= link_to "---", i_have_this_path(subcat), class: "checkbox" %> </p> 
-<% end %> 
+<table class = "table text-center"> 
+  <tr class="text-center"> 
+    <th><h2> Item </h2></th> 
+    <th><h2> Link to Buy </h2></th> 
+  </tr>
+  <% @list_subcategories.each do |subcat| %>
+   
+  <tr>  
+      <td> <%= subcat.name %> <%= link_to "---", i_have_this_path(subcat), class: "checkbox" %> </td> 
+      <td><%= link_to "#{subcat.name}", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"%></td> 
+  </tr> 
+  <% end %> 
+</table> 
