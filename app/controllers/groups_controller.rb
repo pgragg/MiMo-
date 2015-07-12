@@ -38,10 +38,10 @@ class GroupsController < ApplicationController
     @group = Group.all.where("email = ?", "#{params[:group_email]}").where("zip_code = ?", "#{params[:zip_code]}")
 
     if @group.first
-      @group.users << current_user
+      @group.first.users << current_user
       current_user.groups << @group.first
       current_user.save! 
-      @group.save!
+      @group.first.save!
       redirect_to :back
       flash[:notice] = "You have joined #{@group.name}. You are a team player."
     else 
