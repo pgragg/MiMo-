@@ -26,11 +26,17 @@
    </div>
   <% end %>
 
-    <div class = "filter"> 
-    <ul class="nav nav-tabs text-center <%= 'not-signed-in' unless current_user %>"> 
+    <ul class="nav nav-tabs text-center <%= 'not-signed-in' unless current_user %>">
       <div class="hero_image <%= 'not-signed-in' unless current_user %>">
         <img src = "http://i.imgur.com/LRFSfGl.png" class = "mimo_logo"/>
       </div> 
+
+      <% unless current_user %> 
+        <div class="hero-div"> 
+          <h1 class="hero-text">MiMo <br> </h1> 
+          <h2 class="hero-text">Because your new apartment shouldn't <br> look like an episode of hoarders.</h2>
+        </div>
+      <% end %> 
       <% if current_user %> 
         <% if group %> 
           <li class= "col-md-4"> 

@@ -45,12 +45,12 @@ body {
 
 body.splashground {
   background-image: url("http://i376.photobucket.com/albums/oo204/Piper_Gragg/Dollarphotoclub_67009433_zpskpmaxj95.jpg");
-  background-position-y: 79%;
+  background-position-y: 47%;
   /* background-position-x: 70px; */
   background-repeat: no-repeat;
-  width: 100vw;
-  height: 100%;
-  background-size: 100%;
+  width: 20%;
+  height: 20%;
+  background-size: 99%;
 }
 
 .container.splashground.text-center {
@@ -64,7 +64,7 @@ body.splashground {
 
 .container.white {
   background-color: rgba(255, 255, 255, 0.92);
-  min-height: 562px;
+  min-height: 100vh;
   width: 28%;
   color: rgb(29, 29, 29);
   box-shadow: 2px 2px 1px #161616;
@@ -85,7 +85,7 @@ ul {
   width: 50%;
 }
 li a {
-  color: black;
+  color: white;
   font-style: bold;
   letter-spacing: 0.4px;
 }
@@ -94,6 +94,18 @@ form {
   margin-bottom: 5.4%;
 }
 
+h1.hero-text, h2.hero-text{
+  font-style: bold;
+  color: white;
+  font-weight: 800;
+  position: relative;
+  margin: 6% 0 0 0;
+  z-index:1;
+}
+
+h1.hero-text {
+  font-size: 664%;
+}
 
 .vl {
   border-right: 2px solid rgba(255, 255, 255, 0.529412);
@@ -101,6 +113,10 @@ form {
   position: absolute;
   right: 13.6%;
   top: 30%;
+}
+
+.hero-div {
+  margin: 12% 26% 0 0px;
 }
 
 
