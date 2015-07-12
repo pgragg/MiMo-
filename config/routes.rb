@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/find_group' => 'groups#find', as: :find_group
   get 'master_lists/new' => 'master_lists#create', as: :new_list
   get 'master_lists/i_have_this/.:format' => 'master_lists#i_have_this', as: :i_have_this
-   get 'master_lists/i_dont_want' => 'master_lists#i_dont_want', as: :i_dont_want
+  get 'master_lists/i_dont_want' => 'master_lists#i_dont_want', as: :i_dont_want
   devise_for :users, controllers: {sessions: 'users/sessions'}
   resources :welcome 
   resources :list_subcategories
@@ -16,10 +16,10 @@ Rails.application.routes.draw do
   resources :users
   devise_scope :user do
     #root "devise/registrations#new"
-    root "welcome#index"
   end
 
- 
+  get '/landing' => 'welcome#landing', as: :landing
+  root "welcome#landing"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

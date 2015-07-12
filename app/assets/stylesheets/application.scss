@@ -43,6 +43,38 @@ body {
   }
 }
 
+body.splashground {
+  background-image: url("http://i376.photobucket.com/albums/oo204/Piper_Gragg/Dollarphotoclub_67009433_zpskpmaxj95.jpg");
+  background-position-y: 79%;
+  /* background-position-x: 70px; */
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100%;
+  background-size: 100%;
+}
+
+.container.splashground.text-center {
+  background-color: transparent;
+  min-height: 500px;
+  width: 96%;
+  color: white;
+  box-shadow: none;
+  padding: 12% 4% 4% 4%;
+}
+
+.container.white {
+  background-color: rgba(255, 255, 255, 0.92);
+  min-height: 562px;
+  width: 28%;
+  color: rgb(29, 29, 29);
+  box-shadow: 2px 2px 1px #161616;
+  padding: 10% 4% 4% 4%;
+  font-weight: 800;
+  position: absolute;
+  right: 0;
+  top: 9.7%;
+}
+
 h1 {
   font-style: bold;
   font-weight: 800;
@@ -62,6 +94,14 @@ form {
   margin-bottom: 5.4%;
 }
 
+
+.vl {
+  border-right: 2px solid rgba(255, 255, 255, 0.529412);
+  height: 42%;
+  position: absolute;
+  right: 13.6%;
+  top: 30%;
+}
 
 
 // .filter {
@@ -85,8 +125,26 @@ input {
 
 .hero_image {
   background-color: white;
-  width:90px;
+  width: 4.5%;
+  height: 50;
+  margin: 0.1% 0 0 2%;
+  position: absolute;
 }
+
+.hero_image.not-signed-in {
+  background-color: white;
+  width: 7.5%;
+  height: 50;
+  margin: -0.14% 0 0 -2%;
+  position: absolute;
+}
+
+.mimo_logo {
+  height: 100%;
+  width: 100%;
+}
+
+
 
 p.fixed_name {
   position: fixed;
@@ -138,6 +196,21 @@ p.fixed_name {
     float: left;
   }
 }
+
+li.float-right {
+  position: absolute;
+  right: 0px;
+  top: 30px; 
+}
+
+li.float-right.left {
+  right: 15%;
+}
+
+li.float-right.right {
+  right: 5%;
+}
+
 .nav-tabs > li > a {
   line-height: 2.3;
   border: 1px solid transparent;
@@ -173,6 +246,17 @@ p.fixed_name {
   border-radius:3px;
 }
 
+.card.xs-card.white {
+  height: 90px;
+  width: 90px;
+  margin: 5% 0 5% 40%;
+}
+
+.sm-card {
+  height:190px; 
+  width: 190px;
+}
+
 .lg-card {
   height: 400px;
   background-color: white;
@@ -201,6 +285,19 @@ a:hover {
   box-shadow: none; 
   border:none; 
 }
+a.over-image {
+  position: absolute;
+  bottom: 41%;
+}
+
+a.over-image.left {
+  right: 63.5%;
+}
+
+a.over-image.right {
+  right: 25%;
+
+}
 
 a p {
   color: white;
@@ -219,12 +316,18 @@ table {
   font-size:14px; 
 }
 
+
+ul.nav.nav-tabs.text-center.not-signed-in {
+  padding: 1% 0 0 3%;
+  height: 18.2vh;
+}
+
 .alert {
   border: 1px solid transparent;
   border-radius: 0px;
   position: fixed;
   text-align: center;
-  background-color: #6ac5c9;
+  background-color: #ff9129;
   color: white;
   width: 100%;
   top: 0;

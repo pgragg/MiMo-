@@ -8,7 +8,7 @@
   <%= csrf_meta_tags %>
   <link rel="shortcut icon" href="http://i.imgur.com/QC20bUH.png" /> 
 </head>
-<body>
+<body class="<%='splashground' unless current_user %>">
   <% if flash[:notice] %>
    <div class="alert alert-success">
      <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -24,11 +24,14 @@
      <button type="button" class="close" data-dismiss="alert">&times;</button>
      <%= flash[:alert] %>
    </div>
-
   <% end %>
+
     <div class = "filter"> 
-    <% if current_user %> 
-    <ul class="nav nav-tabs text-center"> 
+    <ul class="nav nav-tabs text-center <%= 'not-signed-in' unless current_user %>"> 
+      <div class="hero_image <%= 'not-signed-in' unless current_user %>">
+        <img src = "http://i.imgur.com/LRFSfGl.png" class = "mimo_logo"/>
+      </div> 
+      <% if current_user %> 
         <% if group %> 
           <li class= "col-md-4"> 
             <%= link_to "#{group.name}", groups_path %> </li> 
@@ -36,11 +39,17 @@
         
         <li class= "col-md-4"><%= link_to (current_user.first_name || current_user.email), edit_user_registration_path %></li> 
         <li class= "col-md-4"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+      <% else %> 
+
+        <li class= "float-right left"><%= link_to "Sign up", new_user_registration_path %></li>
+        <div class = "vl"></div>
+        <li class= "float-right right"><%= link_to "Sign in", new_user_session_path %></li>  
         <%end%>
     </ul>
-    <div class="container text-center">
+    <div class="container <%='splashground' unless current_user %> text-center">
       <%= yield %>
     </div>
   </div> 
+  <footer ></footer> 
 </body>
 </html>

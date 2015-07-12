@@ -1,18 +1,19 @@
 <div class = "text-center"> 
-  <div class = "col-md-6 text-center">
-    <h1>You're The Organized One</h1> 
-    <div class = "card text-center">
-      
-      <p> Create an apartment to get the ball rolling. It's easy for your housemates to add themselves.</p> 
-       <%=link_to "Create an Apartment", new_group_path(current_user), class: "btn" %>
+  <div class = "row"> 
+    <div class = "col-md-12 text-center">
+      <h1>Find your way home</h1>
+    </div> 
+  </div> 
+  <div class = "row"> 
+    <div class = "col-md-2"></div> 
+    <div class = "col-md-8">
+      <div class = "card sm-card text-center float-left">  
+      <%=link_to "Create an Apartment", new_group_path(current_user), class: "over-image left" %>
+      </div>
+      <div class = "card sm-card text-center float-left">  
+        <%=link_to "Find an Apartment", find_group_path(current_user), class: "over-image right" %>
+      </div>
     </div>
-  </div>
-  <div class = "col-md-6 text-center">
-    <h1>You're Joining a Group</h1> 
-    <div class = "card text-center">
-      
-      <p> Find your roommates' apartment now! </p>
-      <%=link_to "Find an Apartment", find_group_path(current_user), class: "btn" %>
-    </div>
-  </div>
-</div>  
+    <div class = "col-md-2"></div>
+  </div> 
+</div>

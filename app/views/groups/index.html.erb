@@ -1,8 +1,12 @@
-<% if current_user %> 
-  <table class="table text-center">
-    <% if groups? %>  
-      <%= render partial: 'group_members' %>
-      <%= render partial: 'group_information' %>
-    <% end %> 
+<% if current_user && groups?%> 
+  <div class="row text-center">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <h1> Home is where the beer is </h1>
+      <div class="card xs-card white"></div> 
+      <p> Roommates: <%= render partial: 'group_name_list', locals: {group_members: @group_members}%>
+    </div>
+    <div class="col-md-3">
+  </div>
 <% end %>
 
