@@ -1,4 +1,13 @@
 class MasterListsController < ApplicationController
+
+  def i_have_this
+    # redirect_to :back
+    @subcat = ListSubcategory.find(params[:format])
+    @subcat.user_id ||= current_user.id 
+    @subcat.save! 
+    redirect_to :back
+  end 
+
   def new 
     @master_list = MasterList.new
   end 

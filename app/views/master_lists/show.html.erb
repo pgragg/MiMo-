@@ -1,14 +1,17 @@
 <% direction = "left"%> 
+
 <% @master_list.list_categories.each do |cat| %> 
   <div class="card lg-card float-<%=direction%>"> 
   <h1>  <%= cat.name %>   </h1> 
+
   <% cat.list_subcategories.each do |subcat| %> 
-    <p> <%= subcat.name %>  </p> 
-  <% if direction == "right" %> 
-   <% direction == "left" %> 
-  <% else %> 
-   <% direction == "right"%> 
-  <% end %> 
+    <p class = "subcat-<%=subcat.id%> <%=subcat.user_id != nil ? 'chosen' : 'unchosen'%> "> <%= subcat.name %> <%= link_to "---", i_have_this_path(subcat), class: "checkbox" %> </p> 
+    <% if direction == "right" %> 
+     <% direction == "left" %> 
+    <% else %> 
+     <% direction == "right"%> 
+    <% end %> 
   <% end %> 
   </div>
 <% end %> 
+

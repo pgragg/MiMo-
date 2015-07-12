@@ -110,6 +110,13 @@ p.fixed_name {
   left:2%; 
 }
 
+.checkbox {
+  position: relative;
+  display: inline; 
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .nav-tabs {
   background-color: #66c4c7;
   border-bottom: 1px solid rgba(0,0,0,0.05);
@@ -167,7 +174,13 @@ p.fixed_name {
   color:#111;
   border-radius:3px;
 }
+.chosen {
+  color:grey; 
+}
 
+.unchosen {
+  color:black; 
+}
 .float-right {
   float:right; 
 }

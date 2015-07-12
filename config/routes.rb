@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get '/join_group' => 'groups#join', as: :join_group
   get '/find_group' => 'groups#find', as: :find_group
   get 'master_lists/new' => 'master_lists#create', as: :new_list
+  get 'master_lists/i_have_this/.:format' => 'master_lists#i_have_this', as: :i_have_this
   devise_for :users, controllers: {sessions: 'users/sessions'}
   resources :welcome 
   resources :list_subcategories
