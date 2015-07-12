@@ -3,9 +3,12 @@
 <% @master_list.list_categories.each do |cat| %> 
   <div class="card lg-card float-<%=direction%>"> 
   <h1>  <%= cat.name %>   </h1> 
-
   <% cat.list_subcategories.each do |subcat| %> 
-    <p class = "subcat-<%=subcat.id%> <%=subcat.user_id != nil ? 'chosen' : 'unchosen'%> "> <%= subcat.name %> <%= link_to "---", i_have_this_path(subcat), class: "checkbox" %> </p> 
+    <% if subcat.user_id != 0 %>
+      <p class = "subcat-<%=subcat.id%> chosen"> <%= subcat.name %> <%= link_to "+++", i_dont_want_path(subcat), class: "checkbox" %> </p> 
+    <% else %> 
+      <p class = "subcat-<%=subcat.id%> unchosen"> <%= subcat.name %> <%= link_to "---", i_have_this_path(subcat), class: "checkbox" %> </p> 
+    <% end %> 
     <% if direction == "right" %> 
      <% direction == "left" %> 
     <% else %> 
@@ -14,4 +17,9 @@
   <% end %> 
   </div>
 <% end %> 
+
+<div class="buy_button">  
+  <%= link_to "Buy The Things You're Missing", list_subcategories_path, class: "btn" %> 
+</div>
+
 

@@ -1,0 +1,3 @@
+<% @list_subcategories.each do |subcat| %> 
+    <p> <%= subcat.name %> <%= link_to "---", i_have_this_path(subcat), class: "checkbox" %> </p> 
+<% end %> 
