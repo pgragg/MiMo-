@@ -3,17 +3,6 @@
     <% if groups? %>  
       <%= render partial: 'group_members' %>
       <%= render partial: 'group_information' %>
-    <% else %> 
-      <div class ="text-center"> 
-        <h1> Welcome! </h1> 
-        <p> Create a group to get started. <p> 
-      </div> 
-    <%end%>
-
-  <div class = "text-center"> 
-    <div class = "col-md-12 col-sm-12 col-lg-12">
-      <%=link_to "Create an Apartment", new_group_path(current_user), class: "btn btn-success" %>
-    </div>
-  </div>
+    <% end %> 
 <% end %>
 

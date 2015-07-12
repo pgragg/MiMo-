@@ -6,6 +6,8 @@ class GroupsController < ApplicationController
     if @group
       @master_list = @group.master_list
       @group_members = @group.users 
+    else 
+      redirect_to root_path
     end 
   end 
   def new 

@@ -14,6 +14,9 @@
  */
 
 
+// ff9129    Orange 
+// 66c4c7    Blue 
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 /*@import 'nprogress-bootstrap ';*/
@@ -27,15 +30,15 @@ html {
 body {
   font-family: 'PT sans', 'Lucida Grande', 'Helvetica Neue', sans-serif;
   height:100vh;
-  background-color:white; 
+  background-color:#ffffff ; 
   // background-image: url("http://i.imgur.com/tW01Tq4.jpg"); 
   background-repeat: true;
   .container {
-    background-color: rgba(0, 0, 0, 0.78);
-    min-height: 50%;
+    background-color: rgba(56, 56, 56, 1);
+    min-height: 500px;
     width: 96%;
     color: white;
-    box-shadow: 14px 4px 1px #161616;
+    box-shadow: 2px 2px 1px #161616;
     padding: 12% 4% 4% 4%;
   }
 }
@@ -108,10 +111,11 @@ p.fixed_name {
 }
 
 .nav-tabs {
-  background-color: rgba(3, 84, 176, 0.99);
+  background-color: #66c4c7;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
   width: 100vw;
-  height: 8vw;
-  position: absolute;
+  height: 4.8vw;
+  position: fixed;
   z-index: 999;
   margin: 0 auto;
   border: transparent;
@@ -120,22 +124,56 @@ p.fixed_name {
   }
 }
 .nav-tabs > li > a {
-  margin: 0 0 25% 0;
-  line-height: 4;
+  line-height: 2.3;
   border: 1px solid transparent;
-  height: 50px;
   font-family: 'PT sans', 'Lucida Grande', 'Helvetica Neue', sans-serif;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 500;
   letter-spacing: 1px;
-  color: rgba(254, 254, 254, 1);
+  color: #FFFFFF;
+  text-shadow: 0px 3px 1px rgba(100, 100, 100, 1);
 }
 
 .nav-tabs > li > a:hover {
   background-color: rgba(0, 0, 0, 0);
-  text-shadow: 0px 3px 1px rgba(200, 200, 200, 1);
+  text-shadow: none;
   box-shadow: 0px 0px 0px white;
   border: transparent;
+  
+}
+
+.card > .btn {
+  bottom: 20px;
+  left: 175px;
+  position: absolute;
+}
+
+.card {
+  height: 200px;
+  background-color: white;
+  width: 300px;
+  margin: 20px 0 0 86px;
+  border-bottom: 1px solid grey;
+  color:grey;
+  border-radius:3px;
+}
+
+.lg-card {
+  height: 400px;
+  background-color: white;
+  width: 350px;
+  margin: 20px 0 0 86px;
+  border-bottom: 1px solid grey;
+  color:#111;
+  border-radius:3px;
+}
+
+.float-right {
+  float:right; 
+}
+
+.float-left {
+  float:left; 
 }
 
 a:hover {
@@ -165,10 +203,11 @@ table {
   border-radius: 0px;
   position: fixed;
   text-align: center;
-  background-color: rgba(100, 175, 175, 1);
+  background-color: #6ac5c9;
   color: white;
   width: 100%;
-  bottom: 0;
+  top: 0;
+  z-index:999;
   letter-spacing: 1px;
   text-shadow: 1px 0px 0px grey; 
   box-shadow: 3px 3px 2px rgba(6, 6, 6, 0.3);
@@ -181,18 +220,20 @@ table {
 
 .btn {
   border-radius: 0px;
-  border: 2.8px solid white;
-  background-color: rgba(0, 0, 0, 0);
+  /* border-bottom: 2.8px solid rgba(0, 0, 0, 0.17); */
+  background-color: transparent;
   letter-spacing: 0.5px;
-  color: white;
-  font-weight: 500;
+  background-color: #ff9129;
+  font-weight: 800;
   box-shadow: 3px 3px 2px rgba(6, 6, 6, 0.3);
+  color:white;
 }
+
+
 .btn:hover {
-  background-color: rgba(255, 255, 255, 0.2);
   box-shadow: 3px 4px 6px rgba(6, 6, 6, 0.55);
-  border: 2.8px solid white;
   text-shadow: 0px 2px 1px grey; 
+  color:white;
 }
 .btn_bottom {
   margin: 0 0 50px 0;
@@ -268,5 +309,9 @@ table {
 
 
 @import url(http://fonts.googleapis.com/css?family=PT+Sans);
-
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('/assets/glyphicons-halflings-regular.eot');
+  src: url('/assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/assets/glyphicons-halflings-regular.woff') format('woff'), url('/assets/glyphicons-halflings-regular.ttf') format('truetype'), url('/assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
 

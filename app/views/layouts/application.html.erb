@@ -29,15 +29,16 @@
     <div class = "filter"> 
     <% if current_user %> 
     <ul class="nav nav-tabs text-center"> 
-        <% if groups? %> 
-          <li class= "col-md-4"> <%= link_to "#{group.name}", groups_path %> </li> 
+        <% if group %> 
+          <li class= "col-md-4"> 
+            <%= link_to "#{group.name}", groups_path %> </li> 
         <%end %> 
         
         <li class= "col-md-4"><%= link_to (current_user.first_name || current_user.email), edit_user_registration_path %></li> 
         <li class= "col-md-4"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
         <%end%>
     </ul>
-    <div class="container">
+    <div class="container text-center">
       <%= yield %>
     </div>
   </div> 
