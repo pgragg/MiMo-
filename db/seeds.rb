@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+User.all.each {|user| user.delete}
+Group.all.each {|group| group.delete}
+MasterList.all.each {|ml| ml.delete}
+ListCategory.all.each {|t| t.delete}
+ListSubcategory.all.each {|t| t.delete}
+ListCategory.all.each {|t| t.delete}
