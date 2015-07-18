@@ -373,6 +373,22 @@ ul.nav.nav-tabs.text-center.not-signed-in {
   margin: 0 0 5% 0;
 }
 
+.btn.spaced {
+  margin: 8% 0 20% 0;
+}
+
+.row.text-center.spacer-text {
+  margin: 5% 0 2% 0;
+  padding: 1% 0 0 0;
+}
+
+.text-center.solid-box {
+  border: 3px solid rgba(255, 255, 255, 0.64);
+  padding: 3% 0 8% 0px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.47);
+  background-color: rgba(16, 15, 15, 0.35);
+}
+
 .btn {
   border-radius: 0px;
   /* border-bottom: 2.8px solid rgba(0, 0, 0, 0.17); */
@@ -382,6 +398,11 @@ ul.nav.nav-tabs.text-center.not-signed-in {
   font-weight: 800;
   box-shadow: 3px 3px 2px rgba(6, 6, 6, 0.3);
   color:white;
+}
+
+.btn.btn-deemphasized {
+  background-color: transparent;
+  border: 2px solid rgba(245, 245, 245, 0.42);
 }
 
 
