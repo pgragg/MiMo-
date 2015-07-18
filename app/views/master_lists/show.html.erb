@@ -4,11 +4,12 @@
   <div class="card lg-card float-<%=direction%>"> 
   <h1>  <%= cat.name %>   </h1> 
   <% cat.list_subcategories.each do |subcat| %> 
-    <% if subcat.user_id != 0 %>
-
-      <p class = "subcat-<%=subcat.id%> chosen"> <%= subcat.name %> <%= link_to "", i_dont_want_path(subcat), class: "glyphicon glyphicon-check" %> </p> 
+    <% if subcat.user_id != 1 %>
+    <p class = "subcat-<%=subcat.id%> chosen"> <%= subcat.name %> <%= link_to "", i_dont_want_path(subcat), class: "glyphicon glyphicon-check" %> </p> 
+        
     <% else %> 
-      <p class = "subcat-<%=subcat.id%> unchosen"> <%= subcat.name %> <%= link_to "", i_have_this_path(subcat), class: "glyphicon glyphicon-unchecked" %> </p> 
+    <p class = "subcat-<%=subcat.id%> unchosen"> <%= subcat.name %> <%= link_to "", i_have_this_path(subcat), class: "glyphicon glyphicon-unchecked" %> </p>
+        
     <% end %> 
     <% if direction == "right" %> 
      <% direction == "left" %> 

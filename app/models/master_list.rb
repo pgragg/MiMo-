@@ -1,5 +1,5 @@
 class MasterList < ActiveRecord::Base
-  has_many :list_categories
+  has_many :list_categories, dependent: :destroy 
   has_one :group
 
 

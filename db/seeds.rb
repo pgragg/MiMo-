@@ -12,3 +12,7 @@ MasterList.all.each {|ml| ml.delete}
 ListCategory.all.each {|t| t.delete}
 ListSubcategory.all.each {|t| t.delete}
 ListCategory.all.each {|t| t.delete}
+
+
+user = User.new 
+user.save! 

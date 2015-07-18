@@ -1,7 +1,7 @@
 class Group < ActiveRecord::Base
   
   has_many :users  
-  has_one :master_list 
+  has_one :master_list, dependent: :destroy 
   
 
   def budget

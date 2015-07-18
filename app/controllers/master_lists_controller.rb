@@ -11,7 +11,7 @@ class MasterListsController < ApplicationController
   def i_dont_want
     # redirect_to :back
     @subcat = ListSubcategory.find(params[:format])
-    @subcat.user_id = 0 
+    @subcat.user_id = 1
     @subcat.save! 
     redirect_to :back
   end 
@@ -28,7 +28,7 @@ class MasterListsController < ApplicationController
     MasterList::CATEGORIES.each do |category, values| 
       cat = @master_list.list_categories.create(name: "#{category}")
       values.each do |value| 
-        ListSubcategory.create(name: "#{value}", list_category_id: cat.id, user_id: 0)
+        ListSubcategory.create(name: "#{value}", list_category_id: cat.id, user_id: 1)
       end 
       cat.save!
     end 
