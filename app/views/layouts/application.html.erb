@@ -32,10 +32,11 @@
       <div class = "row nav">
       <% if current_user %> 
         <% if group %> 
+          <li class= "<%=fixed(2)%>"> </li> 
           <li class= "<%=fixed(5)%>"> 
             <%= link_to " #{group.name}", groups_path, class: "glyphicon glyphicon-home" %> </li> 
         <%end %> 
-         <li class= "<%=fixed(5)%>"> <%= link_to " #{current_user.email}", edit_user_registration_path, class: "glyphicon glyphicon-user" %></li> 
+         <li class= "<%=fixed(3)%>"> <%= link_to " #{current_user.email}", edit_user_registration_path, class: "glyphicon glyphicon-user" %></li> 
         <li class= "<%=fixed(2)%>"><%= link_to " Logout", destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-off" %></li>
        
         
