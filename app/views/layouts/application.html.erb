@@ -29,15 +29,16 @@
       <a href = "http://invis.io/3Z3JDO9Q2"> <div class="hero_image <%= 'not-signed-in' unless current_user %>">
         <img src = "http://i.imgur.com/LRFSfGl.png" class = "mimo_logo"/>
       </div> </a>  
-      <div class = "row">
+      <div class = "row nav">
       <% if current_user %> 
         <% if group %> 
           <li class= "<%=fixed(4)%>"> 
             <%= link_to "#{group.name}", groups_path %> </li> 
         <%end %> 
-        <li class= "<%=fixed(4)%>"><%= link_to (current_user.first_name || current_user.email), edit_user_registration_path %></li> 
-        <div class = "vl"></div>
+         <li class= "<%=fixed(4)%>"><%= link_to (current_user.first_name || current_user.email), edit_user_registration_path %></li> 
         <li class= "<%=fixed(4)%>"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+       
+        
       <% else %> 
         <div class = "<%=fixed(11)%> signups">
           <li class= "float-right"><%= link_to "Sign up", new_user_registration_path %></li>

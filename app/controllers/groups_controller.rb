@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
 
   before_action :authenticate_user!
   def index 
-    @group = current_user.groups.first
+    @group = current_user.groups.last
     if @group
       @master_list = @group.master_list
       @group_members = @group.users 
@@ -14,6 +14,9 @@ class GroupsController < ApplicationController
     @group = Group.new 
   end 
   def create 
+    if current_user.groups.count >= 1
+      current_user.groups.each {|group| group.delete}
+    end
     @group = current_user.groups.create(group_params)
     @group.users << current_user
     @group.email = current_user.email 
@@ -46,7 +49,7 @@ class GroupsController < ApplicationController
       flash[:notice] = "You have joined #{@group.name}. You are a team player."
     else 
       redirect_to :back 
-      flash[:error] = "Returns #{@group.count} groups associated with #{params[:group_email]} and #{params[:zip_code]}"
+      flash[:error] = "Try typing those values again. You can also make your own apartment group!"
     end
 
   end 

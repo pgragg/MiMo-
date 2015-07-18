@@ -198,13 +198,10 @@ p.fixed_name {
   width: 12%;
 }
 
-.float_right { 
-  right:2%; 
+.float-right {
+  float: right;
 }
 
-.float_left { 
-  left:2%; 
-}
 
 .checkbox {
   position: relative;
@@ -222,9 +219,10 @@ p.fixed_name {
   z-index: 999;
   margin: 0 auto;
   border: transparent;
-  li {
-    float: left;
-  }
+}
+
+.row.nav {
+  padding: 0.5% 0 0 0;
 }
 
 li.float-right {
@@ -253,7 +251,7 @@ li.float-right {
 }
 
 .nav-tabs > li > a:hover {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
   text-shadow: none;
   box-shadow: 0px 0px 0px white;
   border: transparent;
@@ -361,11 +359,11 @@ ul.nav.nav-tabs.text-center.not-signed-in {
   background-color: #ff9129;
   color: white;
   width: 100%;
-  top: 0;
+  bottom: 0;
   z-index:999;
   letter-spacing: 1px;
   text-shadow: 1px 0px 0px grey; 
-  box-shadow: 3px 3px 2px rgba(6, 6, 6, 0.3);
+  box-shadow: 3px 3px 2px rgba(6, 6, 6, 0.8);
 }
 
 
@@ -405,11 +403,16 @@ ul.nav.nav-tabs.text-center.not-signed-in {
   border: 2px solid rgba(245, 245, 245, 0.42);
 }
 
+.btn-danger {
+  background-color: rgb(121, 26, 4);
+  border: transparent;
+}
 
 .btn:hover {
   box-shadow: 3px 4px 6px rgba(6, 6, 6, 0.55);
   text-shadow: 0px 2px 1px grey; 
   color:white;
+
 }
 .btn_bottom {
   margin: 0 0 50px 0;

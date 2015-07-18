@@ -1,26 +1,28 @@
- <% if group_members %> 
+ <% if group.users.count >= 1 %> 
+  <p> Roommates: </p>
     <% group.users.each do |member| %> 
       <% if member.first_name && member.last_name %> 
         <p><%="#{member.first_name} #{member.last_name[0]}., "%></p>
+      <% else %> 
+        <p><%="#{member.email}"%> </p> 
       <% end %> 
     <%end%>
     <br> 
-    <% if group.address %> 
+    <% if group.address != "" %> 
         <%="Address: #{group.address}"%>
     <% end %> 
     <br>
-    <% if group.budget %> 
-        <%="Budget: #{group.budget}"%>
+    <% if group.budget > 0 %> 
+        <%="Budget: #{number_to_currency(group.budget)}"%>
     <% end %>
     <br> 
   <% end %> 
   <br> <br>
   <% if @group.master_list %> 
-      <td> <%= link_to "Go to the List!", group_master_list_path(@group, @group.master_list), class:"btn  "%></td>
+      <td> <%= link_to "Pick out Your Stuff!", group_master_list_path(@group, @group.master_list), class:"btn  "%></td>
     <% else %> 
-      <td> <%= link_to "Create Your Group's List!", new_list_path(@group), class:"btn"%></td>
+      <td> <%= link_to "Pick out Your Stuff!", new_list_path(@group), class:"btn"%></td>
     <% end %> 
     <br> 
     <br> 
-    
-    <td> <%= link_to "Delete Group", group_path(@group), method: :delete, class:"btn"%></td>
+    <td> <%= link_to "Delete Group", group_path(@group), method: :delete, class:"btn btn-danger"%></td>

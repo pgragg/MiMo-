@@ -2,11 +2,9 @@
   <div class="row text-center">
     <div class="<%=fixed(3)%>"></div>
     <div class="<%=fixed(6)%>">
-      <h1> Home is where the new stuff is </h1>
-      <div class="card xs-card white"></div> 
-      Roommates: <%= render partial: 'group_name_list', locals: {group_members: @group_members, group: @group}%>
-      <br> <br> 
-      <%= link_to "Next Step", list_subcategories_path, class: "btn" %> 
+      <h1> Almost there: time to find the stuff you need. </h1>
+      <%= render partial: 'group_name_list', locals: {group_members: @group_members, group: @group}%>
+      <br> <br>  
     </div>
     <div class="<%=fixed(3)%>">
   </div>
