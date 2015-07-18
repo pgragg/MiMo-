@@ -1,7 +1,7 @@
  <% if group.users.count >= 1 %> 
   <p> Roommates: </p>
     <% group.users.each do |member| %> 
-      <% if member.first_name && member.last_name %> 
+      <% if member.first_name != "" && member.last_name != "" %> 
         <p><%="#{member.first_name} #{member.last_name[0]}., "%></p>
       <% else %> 
         <p><%="#{member.email}"%> </p> 
