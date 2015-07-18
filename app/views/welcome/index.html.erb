@@ -10,13 +10,13 @@
     <div class = "<%=fixed(2)%>"></div>
     <div class = "<%=fixed(8)%>">
       <div class = "col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">  
-         <p>Unless you're living with roommates who have already created a group,
+         <p class="block">Unless you're living with roommates who have already created a group,
             now is the perfect time to create an apartment and start picking out 
             what you need!</p>
       <%=link_to "Create an Apartment", new_group_path(current_user), class: "btn spaced" %>
       </div>
       <div class = "col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">  
-        <p>If your roommates are already using this site, you can find them here.</p>
+        <p class = "block">If your roommates are already using this site, you can find them here.</p>
         <%=link_to "Find an Apartment", find_group_path(current_user), class: "btn btn-deemphasized spaced" %>
       </div>
     </div>
