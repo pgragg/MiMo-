@@ -1,14 +1,14 @@
 <% if current_user && groups?%> 
   <div class="row text-center">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
-      <h1> Home is where the <strike>heart</strike> beer is </h1>
+    <div class="<%=fixed(3)%>"></div>
+    <div class="<%=fixed(6)%>">
+      <h1> Home is where the new stuff is </h1>
       <div class="card xs-card white"></div> 
       Roommates: <%= render partial: 'group_name_list', locals: {group_members: @group_members, group: @group}%>
       <br> <br> 
       <%= link_to "Next Step", list_subcategories_path, class: "btn" %> 
     </div>
-    <div class="col-md-3">
+    <div class="<%=fixed(3)%>">
   </div>
 
 <% end %>

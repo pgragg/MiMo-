@@ -45,12 +45,9 @@ body {
 
 body.splashground {
   background-image: url("http://i376.photobucket.com/albums/oo204/Piper_Gragg/Dollarphotoclub_67009433_zpskpmaxj95.jpg");
-  background-position-y: 47%;
-  /* background-position-x: 70px; */
+  background-position-y: 36%;
   background-repeat: no-repeat;
-  width: 20%;
-  height: 20%;
-  background-size: 99%;
+  overflow:hidden; 
 }
 
 .container.splashground.text-center {
@@ -93,10 +90,18 @@ li a {
   color: white;
   font-style: bold;
   letter-spacing: 0.4px;
+  font-weight: 800;
 }
 
 form {
   margin-bottom: 5.4%;
+}
+
+.hero-div {
+  margin: 7vh 0 0 0px;
+  width: 100%;
+  height: 100%;
+  padding: 0 10vw 0 0;
 }
 
 h1.hero-text, h3.hero-text{
@@ -110,20 +115,21 @@ h1.hero-text, h3.hero-text{
 
 h1.hero-text {
   font-size: 664%;
-  margin: 6% 0 0 0;
 }
 
 .vl {
   border-right: 2px solid rgba(255, 255, 255, 0.529412);
-  height: 42%;
-  position: absolute;
-  right: 13.6%;
-  top: 30%;
+  height: 40px;
+  position: relative;
+  float: right;
+  margin: 0 2%;
 }
 
-.hero-div {
-  margin: 12% 26% 0 0px;
+.signups {
+  margin: 0% 3.4% 0 0;
+  padding: 2% 0 0 0;
 }
+
 
 
 // .filter {
@@ -156,10 +162,11 @@ input {
 
 .hero_image.not-signed-in {
   background-color: white;
-  width: 7.5%;
+  width: 15vh;
   height: 50;
   margin: -0.14% 0 0 -2%;
-  position: absolute;
+  position: absolute; 
+  // absolute positioning doesn't break the row. 
 }
 
 .mimo_logo {
@@ -221,28 +228,28 @@ p.fixed_name {
 }
 
 li.float-right {
-  position: absolute;
-  right: 0px;
-  top: 30px; 
+  position: relative;
+  float: right;
+  margin: 1% 0;
 }
 
-li.float-right.left {
-  right: 15%;
-}
+// li.float-right.left {
+//   right: 15%;
+// }
 
-li.float-right.right {
-  right: 5%;
-}
+// li.float-right.right {
+//   right: 5%;
+// }
 
 .nav-tabs > li > a {
-  line-height: 2.3;
+  line-height: 142%;
   border: 1px solid transparent;
   font-family: 'PT sans', 'Lucida Grande', 'Helvetica Neue', sans-serif;
-  font-size: 13px;
+  font-size: 100%;
   font-weight: 500;
   letter-spacing: 1px;
   color: #FFFFFF;
-  text-shadow: 0px 3px 1px rgba(100, 100, 100, 1);
+  text-shadow: 0px 3px 1px #646464;
 }
 
 .nav-tabs > li > a:hover {
@@ -461,5 +468,26 @@ ul.nav.nav-tabs.text-center.not-signed-in {
   font-family: 'Glyphicons Halflings';
   src: url('/assets/glyphicons-halflings-regular.eot');
   src: url('/assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/assets/glyphicons-halflings-regular.woff') format('woff'), url('/assets/glyphicons-halflings-regular.ttf') format('truetype'), url('/assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+@media (max-width: 861px) {
+
+    .hero-div, h1.hero-text, h3.hero-text, {
+      display: hidden; 
+      z-index:0; 
+      position:absolute; 
+      bottom:0;
+      right:0;
+      height:1px;
+      width:1px; 
+      overflow:hidden; 
+      color: transparent; /* Force the image to its minimum width */
+    }
+
+    .container.white {
+      width:100%;
+      padding: 100px 92px 0 92px;
+    }
+
 }
 

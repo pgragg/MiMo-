@@ -5,17 +5,17 @@
 
 <%= form_tag join_group_path, :method => 'get', :id => "groups_search" do %>
   <div class = "row title_row">
-    <div class = "col-md-6"> 
+    <div class = "<%=fixed(6)%>"> 
       <p> Email Address of Group Creator</p> 
       <%= text_field_tag :group_email, params[:group_email], placeholder: "eg. \"email@example.com\"", class: 'form-control' %>
     </div>
-      <div class = "col-md-6"> 
+      <div class = "<%=fixed(6)%>"> 
         <p> Zip Code to Which You're Moving</p> 
       <%= text_field_tag :zip_code, params[:zip_code], placeholder: "eg. \"10021\"", class: 'form-control' %>
     </div>
   </div>
   <div class = "row text-center title_row"> 
-    <div class = "col-md-12"> 
+    <div class = "<%=fixed(12)%>"> 
       <%= submit_tag "Join Group", :zip_code => nil, class: "btn  "%>
     </div>
   </div>

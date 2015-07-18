@@ -1,5 +1,5 @@
 <% if current_user %> 
-  <div class="col-md-8 col-sm-8 center">
+  <div class="<%=fixed(8)%> center">
    <%= form_for [current_user.groups.new] do |f| %><!--   , remote: true -->
      <div class="form-group">
        <%= f.label :name, "Group Name" %>

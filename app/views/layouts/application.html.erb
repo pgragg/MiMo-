@@ -25,34 +25,35 @@
      <%= flash[:alert] %>
    </div>
   <% end %>
-
     <ul class="nav nav-tabs text-center <%= 'not-signed-in' unless current_user %>">
       <a href = "http://invis.io/3Z3JDO9Q2"> <div class="hero_image <%= 'not-signed-in' unless current_user %>">
         <img src = "http://i.imgur.com/LRFSfGl.png" class = "mimo_logo"/>
-      </div> </a> 
-
-      <% unless current_user %> 
-        <div class="hero-div"> 
-          <h1 class="hero-text">MiMo<br> </h1> 
-          <h3 class="hero-text">Because your new apartment shouldn't <br> look like an episode of Hoarders.</h3>
-        </div>
-      <% end %> 
+      </div> </a>  
+      <div class = "row">
       <% if current_user %> 
         <% if group %> 
-          <li class= "col-md-4"> 
+          <li class= "<%=fixed(4)%>"> 
             <%= link_to "#{group.name}", groups_path %> </li> 
         <%end %> 
-        
-        <li class= "col-md-4"><%= link_to (current_user.first_name || current_user.email), edit_user_registration_path %></li> 
-        <li class= "col-md-4"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-      <% else %> 
-
-        <li class= "float-right left"><%= link_to "Sign up", new_user_registration_path %></li>
+        <li class= "<%=fixed(4)%>"><%= link_to (current_user.first_name || current_user.email), edit_user_registration_path %></li> 
         <div class = "vl"></div>
-        <li class= "float-right right"><%= link_to "Sign in", new_user_session_path %></li>  
+        <li class= "<%=fixed(4)%>"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+      <% else %> 
+        <div class = "<%=fixed(11)%> signups">
+          <li class= "float-right"><%= link_to "Sign up", new_user_registration_path %></li>
+          <div class="vl"></div>
+          <li class= "float-right"><%= link_to "Sign in", new_user_session_path %></li>  
+        </div>
         <%end%>
+        </div> 
     </ul>
     <div class="container <%='splashground' unless current_user %> text-center">
+      <% unless current_user %> 
+        <div class="hero-div row text-center"> 
+          <h1 class="hero-text col-md-12 text-center">MiMo<br> </h1> 
+          <h3 class="col-md-12 text-center">Because moving in shouldn't <br> require days of shopping around.</h3>
+        </div>
+      <% end %>
       <%= yield %>
     </div>
   </div> 
