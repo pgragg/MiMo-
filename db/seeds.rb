@@ -14,5 +14,5 @@ ListSubcategory.all.each {|t| t.delete}
 ListCategory.all.each {|t| t.delete}
 
 
-user = User.new 
+user = User.new(email: "fake@gmail.com", password: "blankone")
 user.save! 
